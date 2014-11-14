@@ -1,0 +1,45 @@
+
+<div id="popup-content"  ng-style="popupPosition" >
+	<div class="popup-excuse" ng-class="popupExcuseNoneClass" ng-hide="showuserform" ng-click="showPopup=false;$event.stopPropagation();">
+		<div class="pupup-excuse-result">
+			<div class="myexcuse" ng-class="popupMyexcuseClass">
+				<p>{{userInfo.result.excuse}}</p>
+				<div>
+					<img ng-src="{{userInfo.userpic}}" width="45" height="45" /><br/>
+					<a><span>{{userInfo.username}}</span></a>
+				</div>
+			</div>
+			<img class="myexcuse-result" ng-src="{{popupexcuseResult}}" width="198" height="325"/>
+			<img class="myexcuse-text" ng-src="{{popupexcuseText}}" width="331" height="325"/>
+		</div>
+		<a class="getprize jbtn" ng-show="userInfo.result.prize.indexOf('tmall') != -1 " ng-href="{{userInfo.result.tmalllink}}" target="_blank" onmousedown="ga('send','event','Success','Tmall_Coupon ');">立即领取</a>
+		<a class="getprize jbtn" ng-show="userInfo.result.prize =='gift'" ng-click="showuserform=true" onclick="ga('send','event','Activity','Free_Coupon')">立即领取</a>
+		<a class="tryagain jbtn" ng-show="userInfo.result.prize =='none'" onclick="ga('send','event','Activity','Rechange'); location.reload()">再换一次</a>
+		<a class="shareresult jbtn" ng-click="shareResult()" onmousedown=" ga('send','event','Success','Share_iphone6')">分享赢iphone6</a>
+	</div>
+	<div class="popup-form" ng-show="showuserform" ng-controller="contactformCtrl" ng-click="showPopup=false;$event.stopPropagation();">
+		<form id="contactform" name="contactform" novalidate ng-submit="contactSubmit();" ng-hide="showsubmitloading || showsubmitsuccess">
+			<div class="form-line">
+	            <input name="name" id="name" required ng-model="formele.name" ng-focus="contactform.submitted=false" /><br/>
+	            <img class="popup-errorImg" ng-show="contactform.name.$error && contactform.submitted" src="images/popup-error-star.png"  width="25" height="29" />
+	        </div>
+	        <div class="form-line">
+	        	<input name="tel" id="tel" maxlength="11" ng-model="formele.tel" required ng-focus="contactform.submitted=false" /><br/>
+	        	<img class="popup-errorImg" ng-show="contactform.tel.$error && contactform.submitted" src="images/popup-error-star.png"   width="25" height="29" />	        	
+	        </div>
+	         <div class="form-line">
+	         	<input name="sheng" id="sheng" ng-model="formele.sheng" required ng-focus="contactform.submitted=false" />
+	         	<input name="shi" id="shi" ng-model="formele.shi" required ng-focus="contactform.submitted=false" >
+	         	<input name="address" id="address" ng-model="formele.address" required ng-focus="contactform.submitted=false" />
+	         	<img class="popup-errorImg" ng-show="(contactform.sheng.$error || contactform.shi.$error ||contactform.address.$error) && contactform.submitted" src="images/popup-error-star.png"  width="25" height="29" />
+	        </div> 
+	        <div class="button-line">	
+		        <img class="popup-errorImg-all" ng-show="!contactform.$valid && contactform.submitted" src="images/popup-error-empty.png?v=1111.001"  width="130" height="18" /> 
+		        <img class="popup-errorImg-all" ng-show="contactform.timeserror" src="images/popup-error-tel.png"  width="366" height="18" />                       
+	            <input class="jbtn contactsubmit" type="submit" value="确认提交" onclick="ga('send','event','Activity','Sumbit')" />
+	        </div>
+        </form>
+        <img ng-show="showsubmitloading" src="images/loading.gif" width="100" id="loading" />
+        <img ng-show="showsubmitsuccess" src="images/popup-submitsuccess" width="145" id="submitsuccess" />
+	</div>
+</div>

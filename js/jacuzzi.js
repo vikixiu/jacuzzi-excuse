@@ -9,9 +9,9 @@ var jiathis_config = {
     //marginTop:150,
     //url:"http://www.nivea.com.cn/inshower",
     title:"国民借口大换购",
-    summary:"别说我不告诉你，我在#国民借口大换购#用借口换好礼，秋冬润体不麻烦，真的没借口哦！小伙伴们还等什么？说出借口，更有机会换到64GiPhone6！",
-    desc:"别说我不告诉你，我在#国民借口大换购#用借口换好礼，秋冬润体不麻烦，真的没借口哦！小伙伴们还等什么？说出借口，更有机会换到64GiPhone6！",
-    pic:"http://ext144.nivea.com.cn/40/jacuzzi/images/share/share.jpg?v=1111.01",
+    summary:"别说我不告诉你，我在#国民借口大换购#用借口换好礼，秋冬润体不麻烦，真的没借口哦！小伙伴们还等什么？说出借口，就有机会换到64GiPhone6！更有5台等你抢哦~",
+    desc:"别说我不告诉你，我在#国民借口大换购#用借口换好礼，秋冬润体不麻烦，真的没借口哦！小伙伴们还等什么？说出借口，就有机会换到64GiPhone6！更有5台等你抢哦~",
+    pic:"http://ext144.nivea.com.cn/40/jacuzzi/images/share/share.jpg?v=1120.01",
     data_track_clickback:true,
     appkey:{
         "tsina":"3147808038",
@@ -44,7 +44,7 @@ jacuzzi.controller('jacuzziCtrl', function($scope, $http, $timeout){
     var r = '?v=' + s4();    
 
     $timeout(function(){
-        $scope.yulianer = {'left':'-290px'}; 
+        $scope.yulianer = {'left':'-318px'}; 
     },1000)
     $scope.jacuzziInit = function(){
         $scope.userInfo = {
@@ -131,22 +131,24 @@ jacuzzi.controller('jacuzziCtrl', function($scope, $http, $timeout){
         var _excuseType = $scope.resulttype;
         var _title="国民借口大换购";
         var _pageurl="http://www.nivea.com.cn/inshower";
-        var _picurl="http://ext144.nivea.com.cn/40/jacuzzi/images/share/"+$scope.userInfo.result.prize+'-'+_excuseType+".jpg?v=1111.001";
-        var _sharetext="我" + $scope.excusename[_excuseType-1] + "的借口：“" + $scope.userInfo.result.excuse + "”"+$scope.prizename[$scope.userInfo.result.prize]+"秋冬润体不麻烦，真的没借口哦！小伙伴们还等什么？说出借口，更有机会换到iPhone6！";
+        var _picurl="http://ext144.nivea.com.cn/40/jacuzzi/images/share/"+$scope.userInfo.result.prize+'-'+_excuseType+".jpg?v=1120.001";
+        var _sharetext="#国民借口大换购#我" + $scope.excusename[_excuseType-1] + "的借口：“" + $scope.userInfo.result.excuse + "”"+$scope.prizename[$scope.userInfo.result.prize]+"秋冬润体不麻烦，真的没借口哦！小伙伴们还等什么？说出借口，就有机会换到64GiPhone6！更有5台等你抢哦~";
         var target_str='_blank';
         var window_size="scrollbars=no,width=600,height=450,"+"left=75,top=20,status=no,resizable=yes"; 
 
         //分享到新浪网
         function shareToSina(sharetext, pageurl, picUrl) {
-            window.open("http://v.t.sina.com.cn/share/share.php?title=" + encodeURIComponent('#国民借口大换购#'+sharetext) + "&url=" + encodeURIComponent(pageurl)+"&pic="+encodeURIComponent(picUrl), target_str,window_size)}
+            window.open("http://v.t.sina.com.cn/share/share.php?title=" + encodeURIComponent(sharetext) + "&url=" + encodeURIComponent(pageurl)+"&pic="+encodeURIComponent(picUrl), target_str,window_size)}
         //分享到QQ空间
         function shareToQzone(title, pageurl,sharetext,picUrl) {   
             window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + pageurl+"&title="+encodeURIComponent(title)+"&pics="+encodeURIComponent(picUrl)+"&desc="+encodeURIComponent(sharetext), target_str,window_size);
         }
         
         if($scope.userInfo.usertype == 'qq'){
+            $http.get('api/?act=postQq');
             shareToQzone(_title,_pageurl,_sharetext, _picurl);
         }else if ($scope.userInfo.usertype == 'weibo'){
+            $http.get('api/?act=postWeibo');
             shareToSina(_sharetext, _pageurl, _picurl);
         }
         
@@ -188,6 +190,7 @@ jacuzzi.controller('jacuzziCtrl', function($scope, $http, $timeout){
                         $scope.popupMyexcuseClass = 'myexcuse' + $scope.userInfo.result.excuseType;
                         $scope.popupexcuseResult = 'images/result-'+$scope.userInfo.result.prize+'.png'+r;
                         $scope.popupexcuseText = 'images/popup-excusetext-0'+$scope.userInfo.result.excuseType+'.png'+r;
+                        $scope.resulttype = $scope.userInfo.result.excuseType;
                         if($scope.userInfo.result.prize == 'none'){
                             $scope.popupExcuseNoneClass = 'popup-excuse-none';
                         }
@@ -307,9 +310,14 @@ jacuzzi.controller('contactformCtrl', function($scope, $http){
 
 //excuse History
 jacuzzi.controller('excuseListCtrl', function($scope, $http){
-	
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+                   .toString(16)
+                   .substring(1);
+      }
+	var _v = 'v=' + s4();
     $scope.items = [];
-        $http.get('api/?act=excuseTopList').
+        $http.get('api/?act=excuseTopList&' + _v).
           success(function(data, status, headers, config) {
             $scope.items = data;
             //console.log(data)
@@ -346,5 +354,32 @@ jacuzzi.controller('excuseListCtrl', function($scope, $http){
 })
 //end of excuse History
 
+function trackLogin(source) {
+    var xmlhttp;
 
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+/*
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 ) {
+           if(xmlhttp.status == 200){
+               document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+           }
+           else if(xmlhttp.status == 400) {
+              alert('There was an error 400')
+           }
+           else {
+               alert('something else other than 200 was returned')
+           }
+        }
+    }
+*/
+    xmlhttp.open("GET", "api/?act=" + source, true);
+    xmlhttp.send();
+}
 

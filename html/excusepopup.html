@@ -12,10 +12,12 @@
 			<img class="myexcuse-result" ng-src="{{popupexcuseResult}}" width="198" height="325"/>
 			<img class="myexcuse-text" ng-src="{{popupexcuseText}}" width="331" height="325"/>
 		</div>
-		<a class="getprize jbtn" ng-show="userInfo.result.prize.indexOf('tmall') != -1 " ng-href="{{userInfo.result.tmalllink}}" target="_blank" onmousedown="ga('send','event','Success','Tmall_Coupon ');">立即领取</a>
+		<a class="getprize jbtn" ng-show="userInfo.result.prize.indexOf('tmall5') != -1 " ng-href="{{userInfo.result.tmalllink}}" target="_blank" onmousedown="ga('send','event','Success','Tmall_Coupon','5');">立即领取</a>
+		<a class="getprize jbtn" ng-show="userInfo.result.prize.indexOf('tmall10') != -1 " ng-href="{{userInfo.result.tmalllink}}" target="_blank" onmousedown="ga('send','event','Success','Tmall_Coupon','10');">立即领取</a>
+		<a class="getprize jbtn" ng-show="userInfo.result.prize.indexOf('tmall15') != -1 " ng-href="{{userInfo.result.tmalllink}}" target="_blank" onmousedown="ga('send','event','Success','Tmall_Coupon','15');">立即领取</a>
 		<a class="getprize jbtn" ng-show="userInfo.result.prize =='gift'" ng-click="showuserform=true" onclick="ga('send','event','Activity','Free_Coupon')">立即领取</a>
 		<a class="tryagain jbtn" ng-show="userInfo.result.prize =='none'" onclick="ga('send','event','Activity','Rechange'); location.reload()">再换一次</a>
-		<a class="shareresult jbtn" ng-click="shareResult()" onmousedown=" ga('send','event','Success','Share_iphone6')">分享赢iphone6</a>
+		<a class="shareresult jbtn" ng-click="shareResult()" onmousedown=" ga('send','event','Success','Share_iphone6','1')">分享赢iphone6</a>
 	</div>
 	<div class="popup-form" ng-show="showuserform" ng-controller="contactformCtrl" ng-click="showPopup=false;$event.stopPropagation();">
 		<form id="contactform" name="contactform" novalidate ng-submit="contactSubmit();" ng-hide="showsubmitloading || showsubmitsuccess">

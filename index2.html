@@ -5,13 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <script src="js/angular-1.2.9.min.js?v=1112.001" ></script> 
-        <script src="js/mb-scrollbar.min.js" ></script> 
-        <script src="js/jacuzzi.js?v=1114.003" ></script> 
+        <script src="js/mb-scrollbar.min.js?v=1126.003" ></script> 
+        <script src="js/jacuzzi.js?v=1121.001" ></script> 
+        <script src="js/wx.js" ></script> 
         <!--[if IE]>
             <script src="js/html5.js" ></script>
         <![endif]-->  
         <link rel="stylesheet" type="text/css" href="css/reset.css">
-    	<link rel="stylesheet" type="text/css" href="css/style.css?v=1112.009">
+    	<link rel="stylesheet" type="text/css" href="css/style.css?v=1124.001">
         <script type="text/javascript">
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,7 +27,7 @@
         <div class="ladingpage page" ng-click="showDetails=false;$event.stopPropagation();">
             <div class="logininfo" ng-include="logininfo">
                 </div>
-            <img class="jacuzzi-kv" src="images/kv.gif?v=1106.001" width="420" height="200"  />
+            <img class="jacuzzi-kv" src="images/kv.gif?v=1106.001" width="380" />
             <div class="excuseForm-wrapper" ng-class="excuseformClass">                
                 <form  id="excuseForm" name="excuseform" novalidate ng-submit="submitExcuse()">
                     <input ng-maxlength="30" id="myexcuse" required ng-focus="excuseSample='';rawinputClass=''" name="myexcuse" ng-model="excuseSample" ng-class="rawinputClass" onclick="ga('send','event','Activity','Fill_excuse')" />
@@ -37,7 +38,7 @@
                 <div class="bottomlinks">
                     <div class="jacuzzi-details" ng-mouseover="showDetails=true;" ng-mouseleave="showDetails=false;" onmouseover="ga('send','event','Activity','Campaign_Rule')">
                         <a >活动详情</a>
-                        <img class="jacuzzi-details-popup" src="images/landing-details.png?v=1111.001" width="454" height="238" ng-show="showDetails" />
+                        <img class="jacuzzi-details-popup" src="images/landing-details.png?v=1120.001" width="454" height="238" ng-show="showDetails" />
                     </div>
                 </div>
             </div>

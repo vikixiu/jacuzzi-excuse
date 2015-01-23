@@ -13,41 +13,41 @@ body, html{font-family: 'Microsoft YaHei', 'simhei', sans-serif;}
 		.excusetitle3{background-position: 20px -160px}
 		.excusetitle4{background-position: 20px -240px}
 		.excusetitle5{background-position: 20px -320px}
-		.excusetitle6{background-position: 20px -480px}
-		.excusetitle7{background-position: 20px -560px}
-		.excusetitle8{background-position: 20px -640px}
+		.excusetitle6{background-position: 20px -400px}
+		.excusetitle7{background-position: 20px -480px}
+		.excusetitle8{background-position: 20px -560px}
 input,input:active, input:focus{border: 0; outline: 0;background: none; padding: 0 10px;}
 a:visited, a:focus{outline:none}
 
 #popup-overlay{background: #000; opacity: 0.6; filter:alpha(opacity=60);  z-index: 9999; position: absolute;left: 0; top: 0; width: 100%; height: 100%}
 #popup-content{position: absolute; top: 50px;z-index: 10000;}
-.jacuzzi-kv{position: absolute; z-index: 1; left: 20px; top: 21px}
+.jacuzzi-kv{position: absolute; z-index: 1; left: 22px; top: 22px}
 
 .page{width: 984px; margin: auto; position: relative;}
-.ladingpage{background: url(../images/landingbg.jpg?v=1111.001) no-repeat; height: 607px; overflow: hidden; }
-.excuseForm-wrapper{padding: 192px 0 0 446px;  position: relative;}
-.excuseform1{background: url(../images/excusebg01.png?v=1107.001) right top no-repeat;}
-.excuseform2{background: url(../images/excusebg02.png?v=1107.001) right top no-repeat;}
-.excuseform3{background: url(../images/excusebg03.png?v=1107.001) right top no-repeat;}
-.excuseform4{background: url(../images/excusebg04.png?v=1107.001) right top no-repeat;}
-.excuseform5{background: url(../images/excusebg05.png?v=1107.001) right top no-repeat;}
-.excuseform6{background: url(../images/excusebg06.png?v=1107.001) right top no-repeat;}
-.excuseform7{background: url(../images/excusebg07.png?v=1107.001) right top no-repeat;}
-.excuseform8{background: url(../images/excusebg08.png?v=1107.001) right top no-repeat;}
+.ladingpage{background: url(../images/landingbg.jpg?v=1121.003) no-repeat; height: 607px; overflow: hidden; }
+.excuseForm-wrapper{padding: 192px 0 0 476px;  position: relative;}
+.excuseform1{background: url(../images/excusebg01.png?v=1107.001) 475px top no-repeat;}
+.excuseform2{background: url(../images/excusebg02.png?v=1107.001) 475px top no-repeat;}
+.excuseform3{background: url(../images/excusebg03.png?v=1107.001) 475px top no-repeat;}
+.excuseform4{background: url(../images/excusebg04.png?v=1107.001) 475px top no-repeat;}
+.excuseform5{background: url(../images/excusebg05.png?v=1107.001) 475px top no-repeat;}
+.excuseform6{background: url(../images/excusebg06.png?v=1107.001) 475px top no-repeat;}
+.excuseform7{background: url(../images/excusebg07.png?v=1107.001) 475px top no-repeat;}
+.excuseform8{background: url(../images/excusebg08.png?v=1107.001) 475px top no-repeat;}
 #excuseForm{display: block;  width: 454px; height: 110px; padding-top:134px;}
 	#myexcuse{width: 440px; height: 15px; line-height: 15px; color: #142874; font-size: 14px; padding: 15px 5px}
 	#myexcuse.raw{color: #a7a7a7}
 	.errorImg{margin-top: 5px}
 	#btn_submitExcuse{text-indent: -9999em; display: block; width: 159px; height: 74px; position: absolute; bottom: -74px;
-		background: url(../images/btn-01.jpg?v=1107.001) no-repeat; cursor: pointer;}
-		#btn_submitExcuse.submitagain{background-image: url(../images/btn-02.jpg?v=1107.002);}
-.bottomlinks{height: 40px;margin: 90px 40px 0 0;float: right; }	
+		background: url(../images/btn-01.jpg?v=1121.001) no-repeat; cursor: pointer;}
+		#btn_submitExcuse.submitagain{background-image: url(../images/btn-02.jpg?v=1121.002);}
+.bottomlinks{height: 40px;margin: 105px 40px 0 0;float: right; }	
 	.jacuzzi-details{float: left; width: 118px; height: 40px;  text-indent: -9999em;
 		cursor: pointer; position: relative;}	
-		.jacuzzi-details-popup{position: absolute; top:-213px; right: 66px}	
+		.jacuzzi-details-popup{position: absolute; top:-213px; right: 30px}	
 	.jacuzzi-sns{float: left; width: 100px; height: 40px;position: relative;text-indent: -9999em; cursor: pointer;}
 		.jacuzzi-sns-overall{display: block;width: 100px; height: 40px;}
-		.jiathiswrapper{position: absolute; top:-20px; right: -8px; width: 170px}	
+		.jiathiswrapper{position: absolute; top:-20px; right: 8px; width: 170px}	
 	
 .popup-login{background: url(../images/loginbg.png?v=1111.001) no-repeat; width: 275px; height: 65px; padding: 90px 0 0 32px; margin:130px auto 0;}	
 	.snslogin{display: block; float: left; width: 95px; height: 40px; margin:0 12px; cursor: pointer; text-indent: -9999em; }
@@ -76,9 +76,9 @@ a:visited, a:focus{outline:none}
 		.button-line{position: relative;}
 			.popup-errorImg-all{position: absolute; right: 185px; top:20px;}
 	#loading, #submitsuccess{display: block; margin: auto}
-.jbtn{height: 58px; background: url(../images/jbtn.png?v=1106.002) no-repeat; display: block; float: left; text-indent: -9999em; cursor: pointer;}	
+.jbtn{height: 58px; background: url(../images/jbtn.png?v=1121.001) no-repeat; display: block; float: left; text-indent: -9999em; cursor: pointer;}	
 	.getprize{width: 170px; background-position: 0 -58px; margin-left: 150px; margin-top: 35px}
-	.shareresult{width: 227px; margin-left: 90px; margin-top: 35px}
+	.shareresult{width: 227px; margin-left: 90px; margin-top: 35px; height: 80px; background-position: left bottom;}
 	.contactsubmit{background-position: 0 -117px; width: 135px; height: 48px; margin-left:242px; border: 0; margin-top: 10px }
 	.tryagain{background-position: 0 -165px; width: 178px; height: 61px;margin-left: 150px; margin-top: 35px}
 
@@ -103,7 +103,7 @@ a:visited, a:focus{outline:none}
 		.product3 a{left: 732px; top: 426px}
 	.product2{width:984px; height: 497px; background: url(../images/product_06.jpg?v=1111.002) no-repeat; position: relative; }
 	.product3{width:984px; height: 587px; background: url(../images/product_07.jpg?v=1111.002) no-repeat; position: relative; }
-.screen-form{height: 619px; background: url(../images/product_01.jpg?v=1111.001) no-repeat; position: relative; overflow: hidden;}
+.screen-form{height: 619px; background: url(../images/product_01.jpg?v=1121.003) no-repeat; position: relative; overflow: hidden;}
 	.screen-form .yulianer{bottom: 10px}
 	.logininfo{position: absolute; top: 30px; right: 28px; z-index: 1;}
 	.logininfo a, .logininfo span{color: #838383; font-size: 12px; float: left; display: block; height: 23px; line-height: 23px; text-decoration: none;}
